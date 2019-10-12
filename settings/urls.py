@@ -15,7 +15,8 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-
+from views.home import ReactView
 urlpatterns = [
+    path('react/', ReactView.as_view()),
     path('admin/', admin.site.urls),
 ]

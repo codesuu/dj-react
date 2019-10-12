@@ -25,7 +25,7 @@ SECRET_KEY = '(sq1bw-!91vf9*$zgv0a)ps7fl3(i^k*%)e*mxd=1eo&bz!c0)'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*'] # modified
 
 
 # Application definition
@@ -126,11 +126,15 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-CORS_ORIGIN_ALLOW_ALL = False
+CORS_ORIGIN_ALLOW_ALL = False # append 
+
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'frontend', 'build', 'static')
+]
 
 CORS_ORIGIN_WHITELIST = [
     'http://localhost:3000', #React 도메인 
-    'https://localhost:3000',
-    'http://localhost:8000', #Django 도메인
-    'https://localhost:8000',
+    # 'https://localhost:3000',
+    # 'http://localhost:8000', #Django 도메인
+    # 'https://localhost:8000',
 ]
